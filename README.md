@@ -28,7 +28,7 @@ By passing the original file name to the `decryptFile` method, the cryptoBundle 
 ```yaml
 dterranova_crypto:
     temp_folder: "%kernel.root_dir%/../web/YOUR_TEMP_FOLDER"
-    chunk_file_size: 2
+    chunk_file_size: 2 # The size (in Mb) of chunked files, more it is big more it will consume memory 
 ```
 
 ## Usage
