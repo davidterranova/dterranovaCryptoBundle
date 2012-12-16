@@ -16,16 +16,38 @@ By passing the original file name to the `decryptFile` method, the cryptoBundle 
 ## Installation
 
 - Add to your composer file
-`"dterranova/crypto-bundle": "dev-master"`
+
+``` json
+{
+    "require": {
+        ...
+        "dterranova/crypto-bundle": "dev-master"
+    }
+    ...
+}
+```
 
 - Update your vendors
 `php composer.phar update`
 
 - Add to your AppKernel
-`new dterranova\Bundle\CryptoBundle\dterranovaCryptoBundle(),`
+
+``` php
+    // app/AppKernel.php
+    public function registerBundles()
+    {
+        return array(
+            // ...
+            new dterranova\Bundle\CryptoBundle\dterranovaCryptoBundle(),
+            // ...
+        );
+    }
+```
 
 - Add to your `app/config/config.yml`
-```yaml
+
+``` yml
+# app/config/config.yml
 dterranova_crypto:
     temp_folder: "%kernel.root_dir%/../web/YOUR_TEMP_FOLDER"
     chunk_file_size: 2 # The size (in Mb) of chunked files, more it is big more it will consume memory 
@@ -34,13 +56,13 @@ dterranova_crypto:
 ## Usage
 
 - Encrypt a file
-```php
+``` php
 $cryto = $this->get("dterranova_crypto.crypto_adapter");
 $crypto->encryptFile(ABSOLUTE_FILE_PATH, KEY);
 ```
 
 - Decrypt a file
-```php
+``` php
 $cryto = $this->get("dterranova_crypto.crypto_adapter");
 $crypto->decryptFile(ABSOLUTE_FILE_PATH, KEY);  // The same absolute file path
 ```
