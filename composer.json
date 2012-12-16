@@ -1,0 +1,22 @@
+{
+    "name": "dterranova/crypto-bundle",
+    "type": "symfony-bundle",
+    "description": "dterranovaCryptoBundle",
+    "keywords": ["file encryption constant memory"],
+    "homepage": "",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Terranova",
+            "email": "davidterranova@kitesize.fr",
+            "homepage": "dterranova.com"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": "<=2.2.x-dev",
+    },
+    "autoload": {
+        "psr-0": { "dterranova\\Bundle\\CryptoBundle": "" }
+    },
+    "target-dir": "dterranova/Bundle/CryptoBundle"
+}
