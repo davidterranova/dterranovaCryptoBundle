@@ -62,7 +62,7 @@ class CryptoAdapter {
 		return true;
 	}
 
-	public function decryptFile($absolutePath, $key) {
+	public function decryptFile($absolutePath, $key, $deleteEncFiles = false) {
 		$folderWithEncFiles = $this->tempDirectory.'/'.$this->tempFolderFromFile($absolutePath);
 		if(! is_dir($folderWithEncFiles)) {
 			throw new \Exception('Folder with enc files doesn t exist '.$folderWithEncFiles);
@@ -81,6 +81,9 @@ class CryptoAdapter {
 			$chunkFileId++;
 		}
 		fclose($handle);
+		if($deleteEncFiles) {
+			$this->rrmdir($folderWithEncFiles);
+		}
 		return true;
 	}
 
@@ -94,5 +97,13 @@ class CryptoAdapter {
 
 	private function tempFolderFromFile($file) {
 		return pathinfo($file, PATHINFO_FILENAME);
+	}
+
+	private function rrmdir($dir) {
+		$files = array_diff(scandir($dir), array('.','..'));
+		foreach ($files as $file) {
+			(is_dir("$dir/$file")) ? $this->rrmdir("$dir/$file") : unlink("$dir/$file");
+		}
+		return rmdir($dir);
 	}
 }

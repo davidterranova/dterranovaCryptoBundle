@@ -64,5 +64,5 @@ $crypto->encryptFile(ABSOLUTE_FILE_PATH, KEY);
 - Decrypt a file
 ``` php
 $cryto = $this->get("dterranova_crypto.crypto_adapter");
-$crypto->decryptFile(ABSOLUTE_FILE_PATH, KEY);  // The same absolute file path
+$crypto->decryptFile(ABSOLUTE_FILE_PATH, KEY, true);  // The same absolute file path
 ```
