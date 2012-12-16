@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "dterranovaCryptoBundle",
     "keywords": ["file encryption constant memory"],
-    "homepage": "",
+    "homepage": "https://github.com/davidterranova/dterranovaCryptoBundle",
     "license": "MIT",
     "authors": [
         {
