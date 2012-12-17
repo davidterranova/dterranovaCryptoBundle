@@ -1,7 +1,7 @@
 # dterranova/crypto-bundle
 
 This bundle provide file encryption with AES-256 Cipher
-The quantity of memory used is the same one it does not matter the size of the file
+The amount of memory used is independant on the file you encrypt.
 
 ## Workflow
 
