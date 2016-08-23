@@ -1,12 +1,12 @@
 # dterranova/crypto-bundle
 
 This bundle provide file encryption with AES-256 Cipher
-The amount of memory used is independant on the file you encrypt.
+The amount of memory used is independant of the file you encrypt.
 
 ## Workflow
 
 ### Encryption
-The original file is readen by the `chunk_file_size` and the encryption is done on this amount of data
+The original file is read by the `chunk_file_size` and the encryption is done on this amount of data
 A folder is created in the `temp_folder` with the name of the original encrypted file
 Each encrypted part are written in this folder
 
