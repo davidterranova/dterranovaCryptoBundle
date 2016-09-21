@@ -40,7 +40,7 @@ class CryptoAdapter {
 		try {
 			mkdir($folderToEncrypt);
 		}
-		catch(\Excpetion $e) {
+		catch(\Exception $e) {
 			throw new \Exception('Impossible to create '.$folderToEncrypt);
 		}
 		$handle 		= fopen($absolutePath, "rb");
